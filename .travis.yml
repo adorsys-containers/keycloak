@@ -1,0 +1,55 @@
+language: generic
+
+cache: false
+
+dist: xenial
+
+services:
+  - docker
+
+# https://docs.travis-ci.com/user/pull-requests/#double-builds-on-pull-requests
+branches:
+  only:
+    - master
+
+env:
+  matrix:
+    - TAG=4.4.0.Final
+    - TAG=latest
+
+install:
+  - sudo -H pip install docker-squash
+
+before_script:
+  - docker --version
+  - docker info
+
+script:
+  - set -e
+  - cd "${DIR}"
+  - travis_retry docker build --pull --build-arg=TAG=${TAG} -t "adorsys/keycloak:${TAG}" .
+  - docker-squash -t "adorsys/keycloak:${TAG}-squashed" "adorsys/keycloak:${TAG}"
+    docker tag "adorsys/keycloak:${TAG}-squashed" "adorsys/keycloak:${TAG}"
+
+after_script:
+  - docker images
+  - docker history "adorsys/keycloak:${TAG}"
+
+before_deploy:
+  - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USER}" --password-stdin
+
+deploy:
+  provider: script
+  script: "$TRAVIS_BUILD_DIR/.travis/deploy.sh"
+  skip_cleanup: true
+  on:
+    repo: adorsys/dockerhub-keycloak
+    all_branches: true
+    condition: $TRAVIS_BRANCH == master || $TRAVIS_TAG =~ ^[0-9]+.[0-9]+.+$
+
+notifications:
+  email:
+    recipients:
+      - jkr@adorsys.de
+    on_success: never
+    on_failure: always
