@@ -1,3 +1,5 @@
+ARG TAG=latest
+
 FROM jboss/keycloak:${TAG}
 
 USER 0
