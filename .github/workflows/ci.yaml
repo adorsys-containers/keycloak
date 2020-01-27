@@ -55,7 +55,7 @@ jobs:
 
       - name: docker build
         env: ${{ matrix.env }}
-        run: docker build --pull -t "${DOCKER_IMAGE}:${TAG}" .
+        run: docker build --pull --build-arg=TAG=${TAG} -t "${DOCKER_IMAGE}:${TAG}" .
         working-directory: ${{ matrix.env.DIR }}
 
       - name: Run tests
