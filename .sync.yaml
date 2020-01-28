@@ -1,0 +1,24 @@
+.github/workflows/ci.yaml:
+  env:
+    - DOCKER_IMAGE: adorsys/keycloak
+      TAG: 4.4.0.Final
+      DIR: .
+      SQUASH: 'true'
+    - DOCKER_IMAGE: adorsys/keycloak
+      TAG: 6.0.1
+      DIR: .
+      SQUASH: 'true'
+    - DOCKER_IMAGE: adorsys/keycloak
+      TAG: 7.0.1
+      DIR: .
+      SQUASH: 'true'
+    - DOCKER_IMAGE: adorsys/keycloak
+      TAG: 8.0.1
+      DIR: .
+      SQUASH: 'true'
+    - DOCKER_IMAGE: adorsys/keycloak
+      TAG: latest
+      DIR: .
+      SQUASH: 'true'
+  buildArgs:
+    - TAG
