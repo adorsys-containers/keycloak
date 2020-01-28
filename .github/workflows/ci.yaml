@@ -7,6 +7,7 @@ on:
       - master
     paths-ignore:
       - 'README.md'
+      - '.sync.yml'
   schedule:
     - cron: '0 1 * * *'
 
@@ -16,27 +17,31 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          - DOCKER_IMAGE: adorsys/keycloak
-            TAG: 4.4.0.Final
-            DIR: .
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
             SQUASH: 'true'
-          - DOCKER_IMAGE: adorsys/keycloak
-            TAG: 6.0.1
-            DIR: .
+            TAG: '4.4.0.Final'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
             SQUASH: 'true'
-          - DOCKER_IMAGE: adorsys/keycloak
-            TAG: 7.0.1
-            DIR: .
+            TAG: '6.0.1'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
             SQUASH: 'true'
-          - DOCKER_IMAGE: adorsys/keycloak
-            TAG: 8.0.1
-            DIR: .
+            TAG: '7.0.1'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
             SQUASH: 'true'
-          - DOCKER_IMAGE: adorsys/keycloak
-            TAG: latest
-            DIR: .
+            TAG: '8.0.1'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
             SQUASH: 'true'
-
+            TAG: 'latest'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
