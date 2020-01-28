@@ -1,0 +1,19 @@
+name: DockerHub
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  readme:
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v2.1.0
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
+          DOCKERHUB_REPOSITORY: adorsys/keycloak
