@@ -43,7 +43,7 @@ jobs:
             DIR: '.'
             DOCKER_IMAGE: 'adorsys/keycloak'
             SQUASH: 'true'
-            TAG: '9.0.2'
+            TAG: '9.0.3'
           -
             DIR: '.'
             DOCKER_IMAGE: 'adorsys/keycloak'
