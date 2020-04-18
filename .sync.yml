@@ -17,7 +17,7 @@
       DIR: .
       SQUASH: 'true'
     - DOCKER_IMAGE: adorsys/keycloak
-      TAG: 9.0.2
+      TAG: 9.0.3
       DIR: .
       SQUASH: 'true'
     - DOCKER_IMAGE: adorsys/keycloak
