@@ -33,12 +33,32 @@ jobs:
             DIR: '.'
             DOCKER_IMAGE: 'adorsys/keycloak'
             SQUASH: 'true'
+            TAG: '7.0.0'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
+            SQUASH: 'true'
             TAG: '7.0.1'
           -
             DIR: '.'
             DOCKER_IMAGE: 'adorsys/keycloak'
             SQUASH: 'true'
+            TAG: '8.0.0'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
+            SQUASH: 'true'
             TAG: '8.0.1'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
+            SQUASH: 'true'
+            TAG: '9.0.0'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
+            SQUASH: 'true'
+            TAG: '9.0.2'
           -
             DIR: '.'
             DOCKER_IMAGE: 'adorsys/keycloak'
