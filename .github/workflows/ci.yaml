@@ -83,6 +83,11 @@ jobs:
             DIR: '.'
             DOCKER_IMAGE: 'adorsys/keycloak'
             SQUASH: 'true'
+            TAG: '11.0.0'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
+            SQUASH: 'true'
             TAG: 'latest'
     runs-on: ubuntu-latest
     steps:
@@ -187,7 +192,7 @@ jobs:
             done;
             (exit $s)
           fi
-      
+
       - name: Slack notification if pipeline failed
         uses: 8398a7/action-slack@v3
         with:
