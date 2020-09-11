@@ -88,6 +88,16 @@ jobs:
             DIR: '.'
             DOCKER_IMAGE: 'adorsys/keycloak'
             SQUASH: 'true'
+            TAG: '11.0.1'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
+            SQUASH: 'true'
+            TAG: '11.0.2'
+          -
+            DIR: '.'
+            DOCKER_IMAGE: 'adorsys/keycloak'
+            SQUASH: 'true'
             TAG: 'latest'
     runs-on: ubuntu-latest
     steps:

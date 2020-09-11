@@ -53,6 +53,14 @@
       DIR: .
       SQUASH: 'true'
     - DOCKER_IMAGE: adorsys/keycloak
+      TAG: 11.0.1
+      DIR: .
+      SQUASH: 'true'
+    - DOCKER_IMAGE: adorsys/keycloak
+      TAG: 11.0.2
+      DIR: .
+      SQUASH: 'true'
+    - DOCKER_IMAGE: adorsys/keycloak
       TAG: latest
       DIR: .
       SQUASH: 'true'
